@@ -1,4 +1,4 @@
-import getStoredData from "./getDataDB";
+/*import getStoredData from "./getDataDB";
 
 
 const displayController = async(city) =>{
@@ -27,4 +27,4 @@ const displayController = async(city) =>{
 }
 
 
-export default displayController;
+export default displayController;*/

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { addItem, deleteCity } from "../db/DBStore";
+//import { addItem, deleteCity } from "../db/DBStore";
 import dataHandlerUtil from "../utils/DataHandler";
-import displayController from "../utils/Contains";
+//import displayController from "../utils/Contains";
 import { Navigate } from "react-router-dom";
+import { addCities } from "../db/DBStore";
 
 
 
@@ -42,7 +43,7 @@ const DisplayDetails = (data) => {
         try {
             const data = await dataHandlerUtil(city);
             setWeatherData(data) ;
-            handleContain();
+           // handleContain();
        
         } catch (error) {
                 console.error(error)
@@ -54,14 +55,14 @@ const DisplayDetails = (data) => {
     
     const handleCityChange = (city, id, country) => {
 
-        addItem(city, id, country);
+        addCities(city, id, country);
         setContain(true);
        
        
     }
 
 
-    const handleCityDelete = (city) => {
+   /* const handleCityDelete = (city) => {
         deleteCity(city);
         setContain(false);
 
@@ -74,7 +75,7 @@ const DisplayDetails = (data) => {
     }
  
 
-
+*/
 
 
 

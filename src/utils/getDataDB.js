@@ -1,4 +1,4 @@
-import { getSavedCities } from "../db/DBStore";
+/*import { getSavedCities } from "../db/DBStore";
 
 const getStoredData = async() => {
 
@@ -8,4 +8,4 @@ const getStoredData = async() => {
    return addedCities;
 }
 
-export default getStoredData;
+export default getStoredData;*/

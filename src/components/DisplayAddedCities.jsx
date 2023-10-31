@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { deleteCity} from "../db/DBStore"
+//import { deleteCity} from "../db/DBStore"
 import { Link } from "react-router-dom";
-import getStoredData from "../utils/getDataDB";
+//import getStoredData from "../utils/getDataDB";
 import dataHandlerUtil from "../utils/DataHandler";
-
+import {getAddedCities} from "../db/DBStore"
 
 
 
@@ -19,18 +19,21 @@ function DisplayCities() {
     const [weatherData, setWeatherData] = useState([]);
     
   
-    useEffect(()=>{
+   useEffect(()=>{
        
-
-        getStoredData().then((data)=>{
-            setCities(data)
-            console.log(data.length)
-            });
-        
+    const fetchAddedCities =async() =>{
+        const data = await getAddedCities();
+      
+        setCities(data);
+    }
+    
+    fetchAddedCities();
     
     },[])
 
-
+   
+    
+    
     useEffect(()=>{
       
         handleWeatherSearch();
@@ -50,39 +53,34 @@ function DisplayCities() {
         if(cities.length!=0){
             cities.map(async(c)=>{
            
-            const data = await dataHandlerUtil(c)
-            if(!weatherData.some(item=>item.name===data.name)){
+            const data = await dataHandlerUtil(c.name);
+              
             setWeatherData((prevData)=>[...prevData, data])}
-        })}
+        )}
     
-        
-   
+    
         };
       
-
+        console.warn('weather',weatherData)
 
 
     
     //actualiza y controla en función de los cambios
-    const handleChanges = (city) => {
-        deleteCity(city);
-      
+    const handleChanges = async() => {
+        console.log('entra')
+        getAddedCities();
     };
   
 
-    return  (
-        <>
-
-
+    return (
+        <> 
           
-           
-          {weatherData ? (
            <div className="added-cities-cont">
                 
                     <ul className="list-added">
                     
                     {
-                    weatherData.map((city) => {
+                  weatherData.map((city) => {
 
                     return (
                       
@@ -92,8 +90,8 @@ function DisplayCities() {
                              {city.city}<button onClick={() => handleChanges(city.city)} className="delete-btn-added">X</button>
                         </div>
                         <p>{city.country}</p>
-                      
                         <img src={city.iconUrl}></img>
+                      
                         
                     </li>
                   
@@ -112,7 +110,7 @@ function DisplayCities() {
                     (null)}
 
              
-            </div>):(null)} 
+            </div>
         </>
     );
 
