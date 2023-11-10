@@ -28,3 +28,13 @@ var db = new Dexie("citiesDB");
         alert (`Error: ${e}`);
       }
     }
+
+    export const deleteCity = async(id) =>{
+      try {
+      await db.cities.delete(id);
+      console.log('deleted')
+      } catch (e) {
+        alert (`Error: ${e}`);
+      }
+    }
+    

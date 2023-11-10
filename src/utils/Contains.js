@@ -1,20 +1,13 @@
-/*import getStoredData from "./getDataDB";
+import { getAddedCities } from "../db/DBStore";
 
 
 const displayController = async(city) =>{
 
 
-    async function handleCitySaved() {
-        const mappedCities = await getStoredData();
-
-        return await mappedCities;
-    }
 
 
-
-   const storedCities = await handleCitySaved()
-
-
+   const storedCities = await getAddedCities();;
+   
   
     const normalizeName = (name) =>name.toLowerCase();
 
@@ -27,4 +20,4 @@ const displayController = async(city) =>{
 }
 
 
-export default displayController;*/
+export default displayController;
