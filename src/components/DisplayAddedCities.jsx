@@ -81,7 +81,7 @@ function DisplayCities(props) {
                 <div className="grid-column" key={city.id}>
 
                   
-                    <button onClick={()=>handleDisplayDetails(city.city)} className="widget-container">
+                    <button onClick={()=>handleDisplayDetails(city.city)} className="widget-container" >
                     <button onClick={(e) => handleChanges(city.id, city.city) && e.stopPropagation()} id="delete-btn-added"><img src={`src/assets/weather_icons/eliminar.png`} alt="delete-icon"></img></button>
                         <p id='cityName'>{city.city}<span>{city.country}</span></p>
                         <img src={`src/assets/weather_icons/${city.iconUrl}`}></img>
@@ -103,7 +103,7 @@ function DisplayCities(props) {
           
 
          
-        </div>) : ((!controlLoad  ) ? (<div className="loading-cont"><div className="loading"></div></div> ) : ((controlLoad && weatherData.length==0) ? (<div className="no-added"><p>No cities added yet</p></div>) : (null)))}
+        </div>) : ((!controlLoad  ) ? (<div data-testid='pw' className="loading-cont"><div className="loading"></div></div> ) : ((controlLoad && weatherData.length==0) ? (<div className="no-added"><p>No cities added yet</p></div>) : (null)))}
         </>
     );
 

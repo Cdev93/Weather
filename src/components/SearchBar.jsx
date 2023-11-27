@@ -13,7 +13,7 @@ const SearchBar = (props) => {
     const [delay, setDelay] = useState(50);
 
 
-
+  
     useEffect(()=>{
 
         const fetchLocations = async() =>{
@@ -104,7 +104,7 @@ const SearchBar = (props) => {
     }
 
     const handleSuggestions = async(city) =>{
-        console.warn(city)
+        
         props.setCitySearch(city);
         setSuggestions([]);
         setCity('');
@@ -116,7 +116,7 @@ const SearchBar = (props) => {
         <div className="search-bar-container">
             <div className="i-s-cont">
             {city ? (<button onClick={()=>handleWeatherSearch() && handleVisibility()} className="search-btn"><img src={`src/assets/weather_icons/Search.png`}></img></button> ) 
-            : (<button className="search-btn" onClick={()=>handleContentSearch()}><img src={`src/assets/weather_icons/Search.png`}></img></button>)}
+            : (<button className="search-btn" onClick={()=>handleContentSearch()}><img src={`src/assets/weather_icons/Search.png`} alt='sbtn'></img></button>)}
             <input
             
                 type="text"

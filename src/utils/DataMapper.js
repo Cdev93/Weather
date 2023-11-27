@@ -9,7 +9,7 @@ const mapWeatherData = (info) => {
    
     const data  = info.weatherData;
     const data2 = info.weatherData2
-   
+
     if ( !data || !data.main || !data.weather || !data.sys ) return (
        console.warn('Error no data')
     )

@@ -7,15 +7,24 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test-unit": "vitest src/__test__/tests-unit/*.test.*",
+    "test-int": "vitest src/__test__/tests-int/*.test.jsx",
+    "test-end": "playwright test src/__test__/tests-end/*"
   },
   "dependencies": {
     "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.17.0",
+    "vitest": "^0.34.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/react": "^14.1.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/node": "^20.9.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
@@ -23,6 +32,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "jsdom": "^22.1.0",
+    "msw": "^2.0.7",
     "vite": "^4.4.5"
   }
 }

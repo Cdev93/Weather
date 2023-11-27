@@ -90,7 +90,7 @@ const DisplayDetails = (props) => {
      { weatherData && props.visible && notFound=='' ? 
                 ( 
                
-                <div className="weather-details-container">
+                <div className="weather-details-container" >
                     <div className="h2-h5-cont"><h2>Weather in {weatherData.city}</h2><h5>{weatherData.country}</h5></div>
 
                     <div className="weather-info">
@@ -110,7 +110,7 @@ const DisplayDetails = (props) => {
                             </div>
                         </section>
                         <section className="s-section">
-                          <MyComponent city={weatherData}></MyComponent>
+                          <MyComponent  city={weatherData}></MyComponent>
                         
                         </section>
                     </div>
