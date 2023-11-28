@@ -10,7 +10,7 @@
     "test-unit": "vitest src/__test__/tests-unit/*.test.*",
     "test-int": "vitest src/__test__/tests-int/*.test.jsx",
     "test-end": "playwright test src/__test__/tests-end/*",
-    "check-lint": "eslint src/",
+    "check-lint": "eslint",
     "check-prettier": "prettier --check ."
   },
   "dependencies": {
