@@ -11,8 +11,8 @@
     "test-int": "vitest src/__test__/tests-int/*.test.jsx",
     "test-end": "playwright test src/__test__/tests-end/*",
     "check-lint": "eslint . --ext .js",
-    "check-prettier": "prettier --check .",
-    "prepare": "husky install"
+    "check-prettier": "prettier --check ."
+
   },
   "dependencies": {
     "axios": "^1.5.1",
