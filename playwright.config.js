@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
-
+import { defineConfig, devices } from '@playwright/test'
+import process from 'process'
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -24,15 +24,13 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
- 
-
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     baseURL: 'http://127.0.0.1:5173/',
     testIdAttribute: 'data-pw',
-  
-    headless:false,
+
+    headless: false,
 
     launchOptions: {
       slowMo: 1250,
@@ -44,7 +42,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-   /* {
+    /* {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
@@ -56,10 +54,10 @@ export default defineConfig({
     },
 */
 
-{
-  name: 'firefox',
-  use: { ...devices['Desktop Firefox'] },
-},
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -87,5 +85,4 @@ export default defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
-
+})

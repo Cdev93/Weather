@@ -1,23 +1,15 @@
-import { getAddedCities } from "../db/DBStore";
+import { getAddedCities } from '../db/DBStore'
 
+const displayController = async (city) => {
+  const storedCities = await getAddedCities()
 
-const displayController = async(city) =>{
+  const normalizeName = (name) => name.toLowerCase()
 
+  const isCityStored = storedCities.some(
+    (storedCity) => normalizeName(storedCity.name) === normalizeName(city),
+  )
 
-
-
-   const storedCities = await getAddedCities();;
-   
-  
-    const normalizeName = (name) =>name.toLowerCase();
-
-    const isCityStored = storedCities.some((storedCity)=> normalizeName(storedCity.name) === normalizeName(city));
-
-   
-
-    return isCityStored;
-
+  return isCityStored
 }
 
-
-export default displayController;
+export default displayController

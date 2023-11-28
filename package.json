@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test-unit": "vitest src/__test__/tests-unit/*.test.*",
     "test-int": "vitest src/__test__/tests-int/*.test.jsx",
-    "test-end": "playwright test src/__test__/tests-end/*"
+    "test-end": "playwright test src/__test__/tests-end/*",
+    "check-lint": "eslint . --ext .js",
+    "check-prettier": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^1.5.1",
@@ -28,12 +30,23 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint": "^8.54.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "jsdom": "^22.1.0",
     "msw": "^2.0.7",
+    "prettier": "^3.1.0",
     "vite": "^4.4.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false,
+    "printWidth": 80,
+    "endOfLine": "auto",
+    "arrowParens": "always"
   }
 }
