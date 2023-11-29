@@ -14,7 +14,10 @@
     "check-prettier": "prettier --check ."
   },
   "dependencies": {
+    "@trendyol-js/react-carousel": "^3.0.2",
     "axios": "^1.5.1",
+    "dexie": "^3.2.4",
+    "luxon": "^3.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
