@@ -19,6 +19,9 @@ jobs:
       - name: 🌀 Checkout project
         uses: actions/checkout@v4
 
+      - name: 🔧 install dependencies
+        run: npm install
+
       - name: 🔍 Check lint
         run: npm run check-lint
 
