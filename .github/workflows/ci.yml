@@ -44,7 +44,7 @@ jobs:
         run: npm install playwright
 
       - name: 📎 Start dev server mode
-        run: npm install playwright
+        run: npm run dev
 
       - name: 🙈 test-e2e
         run: npm run test-end
