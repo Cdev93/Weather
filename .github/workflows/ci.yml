@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🔧 install dependencies
-        run: npm install playwright
+        run: npx install playwright
 
       - name: 🙈 test-e2e
         run: npm run test-end
