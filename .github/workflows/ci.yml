@@ -37,6 +37,9 @@ jobs:
       - name: 🌀 Checkout project
         uses: actions/checkout@v4
 
+      - name: 🔧 install dependencies
+        run: npx install playwright
+
       - name: 🙈 test-e2e
         run: npm run test-end
 
