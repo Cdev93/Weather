@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🌀 Checkout project
+      - name: 🎯 Checkout project
         uses: actions/checkout@v4
 
       - name: 🔧 install dependencies
@@ -34,11 +34,17 @@ jobs:
     needs: check
 
     steps:
-      - name: 🌀 Checkout project
+      - name: 🎯 Checkout project
         uses: actions/checkout@v4
 
-      - name: 🔧 install dependencies
-        run: npx install playwright
+      - name: 🔧 Install dependencies
+        run: npm install
+
+      - name: 🔧 Install playwright
+        run: npm install playwright
+
+      - name: 📎 Start dev server mode
+        run: npm install playwright
 
       - name: 🙈 test-e2e
         run: npm run test-end
@@ -49,8 +55,8 @@ jobs:
     needs: testing
 
     steps:
-      - name: 🌀 Checkout project
+      - name: 🎯 Checkout project
         uses: actions/checkout@v4
 
-      - name: 💪 Build project
+      - name: 🚧 Build project
         run: npm run build
