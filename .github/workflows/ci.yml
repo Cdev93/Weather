@@ -2,13 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
+    branches: [main, master]
   pull_request:
-
-concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    branches: [main, master]
 
 jobs:
   check:
@@ -30,21 +26,27 @@ jobs:
 
   testing:
     name: 👌 Test App
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     needs: check
 
     steps:
-      - name: 🎯 Checkout project
-        uses: actions/checkout@v4
-
-      - name: 🔧 Install dependencies
-        run: npm install
-
-      - name: 🔧 Install Playwright Browsers
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-
-      - name: 🙈 test-e2e
+      - name: Run Playwright tests
         run: npm run test-end
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
   build:
     name: 👷 Make a build
