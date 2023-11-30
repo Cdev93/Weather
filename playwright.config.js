@@ -30,9 +30,10 @@ export default defineConfig({
     baseURL: 'https://localhost:5173/',
 
     headless: true,
+    timeout: 120 * 5000,
 
     launchOptions: {
-      slowMo: 1250,
+      //slowMo: 1250,
     },
     viewport: { width: 100, height: 100 },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
