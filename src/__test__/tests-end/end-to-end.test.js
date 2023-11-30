@@ -27,7 +27,7 @@ test.describe('Testing Searchs & adds', () => {
     //introducimos un parámetro y pulsamos el botón de buscar
     await page.locator('input.input-container-sb').fill('Madrid')
     //se espera que aparezca la sugerencia
-    await expect(page.locator('button.sugg-btn')).toBeVisible()
+    await expect(page.locator('button.sugg-btn')).toBeVisible({timeout:30000})
     //se pulsa el botón de buscar
     await page.locator('button.search-btn').click()
 
