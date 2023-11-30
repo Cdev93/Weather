@@ -28,7 +28,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     baseURL: 'http://127.0.0.1:5173/',
-    testIdAttribute: 'data-pw',
+  
 
     headless: true,
 
@@ -79,11 +79,11 @@ export default defineConfig({
     // },
   ],
 
-  /* Run your local dev server before starting the tests */
+  /* Run your local dev server before starting the tests 
   webServer: {
     command: 'npm run dev',
     url: 'http://127.0.0.1:5173',
     reuseExistingServer: false,
     timeout: 120 * 1000,
-  },
+  },*/
 })
