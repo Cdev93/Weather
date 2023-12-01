@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test-unit": "vitest src/__test__/tests-unit/*.test.*",
+    "test-unit": "vitest src/__test__/tests-unit/*",
     "test-int": "vitest src/__test__/tests-int/*.test.jsx",
     "test-end": "playwright test src/__test__/tests-end/*",
     "check-lint": "eslint",
