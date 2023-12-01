@@ -5,7 +5,7 @@ import { beforeAll } from 'vitest'
 import { afterAll } from 'vitest'
 import { afterEach } from 'vitest'
 import { describe } from 'vitest'
-import test from 'node:test'
+import { test } from 'vitest'
 
 beforeAll(() => server.listen())
 
